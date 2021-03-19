@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayoutManager mLayoutManager;
     private Button mButtonUpdateData;
     private TextView mTextViewInfoUpdate;
-
+    private MainViewModel model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,21 +45,16 @@ public class MainActivity extends AppCompatActivity {
         mValuteAdapter = new ValuteAdapter();
         mRecyclerView.setAdapter(mValuteAdapter);
 
+        model = new ViewModelProvider(this).get(MainViewModel.class);
+
         mButtonUpdateData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateData(true);
+                model.loadData();
             }
         });
 
-        updateData(false);
-    }
-
-    private void updateData(boolean isLoadServer)
-    {
-        MainViewModel model = new ViewModelProvider(this).get(MainViewModel.class);
-
-        LiveData<MainObject> data = model.getData(isLoadServer);
+        LiveData<MainObject> data = model.getData();
         data.observe(this, new Observer<MainObject>() {
             @Override
             public void onChanged(@Nullable MainObject s) {
@@ -79,23 +74,6 @@ public class MainActivity extends AppCompatActivity {
             System.out.println(ex);
         }
         return dateString;
-    }
-
-    @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        // outState.putParcelable(MainActivity.class.getCanonicalName(),mValuteAdapter.getModel());
-    }
-
-
-    @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-       /* MainObject savedObject = savedInstanceState.getParcelable(MainActivity.class.getCanonicalName());
-        if(savedObject!=null)
-            mValuteAdapter.addData(savedObject);
-        else
-            mValuteAdapter.updateData();*/
     }
 
 }

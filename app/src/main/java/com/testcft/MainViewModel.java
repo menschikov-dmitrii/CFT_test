@@ -36,8 +36,8 @@ public class MainViewModel extends AndroidViewModel {
         mRequestQueue = Volley.newRequestQueue(application);
     }
 
-    public LiveData<MainObject> getData(boolean isLoadServer ) {
-        if (data == null || isLoadServer)
+    public LiveData<MainObject> getData( ) {
+        if (data == null)
         {
             data = new MutableLiveData<>();
             loadData();
@@ -45,7 +45,7 @@ public class MainViewModel extends AndroidViewModel {
         return data;
     }
 
-    private void loadData() {
+    public void loadData() {
 
         final JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, testUrl, null, response -> {
 
