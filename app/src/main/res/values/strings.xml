@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Курсы валют ЦБ</string>
+    <string name="textViewRub">RUR:</string>
+    <string name="textButtonUpdate">Обновить данные</string>
+    <string name="textViewLastUpdate">Последнее обновление %1$s</string>
+    <string name="patternDateFormat">MM/dd/yyyy HH:mm:ss</string>
+    <string name="textViewCalcRuR">1 RUR = %1$.4f %2$s</string>
+    <string name="textViewCalcValute">%1$s:</string>
+    <string name="errorCalc">Калькулятор не может быть запущен для выбранной вылюты</string>
+</resources>

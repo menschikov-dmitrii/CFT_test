@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CalcActivity">
+
+    <TextView
+        android:id="@+id/mTextViewHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mTextViewRUB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewRub"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/mEditTextNumberDecimalRUB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mEditTextNumberDecimalRUB" />
+
+    <TextView
+        android:id="@+id/mTextViewValute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/mEditTextNumberDecimalVALUTE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mEditTextNumberDecimalVALUTE" />
+
+    <EditText
+        android:id="@+id/mEditTextNumberDecimalRUB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/mTextViewRUB"
+        app:layout_constraintTop_toBottomOf="@+id/mTextViewHeader" />
+
+    <EditText
+        android:id="@+id/mEditTextNumberDecimalVALUTE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/mTextViewValute"
+        app:layout_constraintTop_toBottomOf="@+id/mImageViewConverter" />
+
+    <ImageView
+        android:id="@+id/mImageViewConverter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mEditTextNumberDecimalRUB"
+        app:srcCompat="@drawable/ic_convert"
+        tools:ignore="VectorDrawableCompat" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
